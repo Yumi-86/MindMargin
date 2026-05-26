@@ -5,6 +5,9 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\UserBook;
+use App\Models\Review;
+use App\Models\Note;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,9 +20,20 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        $user = User::factory()->create();
+        $userBooks = UserBook::factory()->count(5)->create([
+            'user_id' => $user->id
         ]);
+
+        foreach($userBooks as $userBook) {
+            Review::factory()->create([
+                'user_id' => $userBook->user_id,
+                'book_id' => $userBook->book_id,
+            ]);
+            Note::factory()->count(2)->create([
+                'user_id' => $userBook->user_id,
+                'book_id' => $userBook->book_id,
+            ]);
+        }
     }
 }
