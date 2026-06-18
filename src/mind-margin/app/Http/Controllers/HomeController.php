@@ -15,7 +15,6 @@ class HomeController extends Controller
             ->withAvg('reviews', 'score')
             ->take(3)
             ->get();
-            
 
         return view('home.index', compact('books'));
     }

@@ -1,5 +1,5 @@
-<div class="flex gap-1 items-center">
-    <div class="flex justify-between items-center">
+<div class="flex flex-col gap-1 items-center">
+    <div class="flex items-center gap-13">
         <div class="text-semiBlack font-semibold">
             {{ $review->user->name }}
         </div>

@@ -1,7 +1,11 @@
-<div class="flex flex-between pb-2">
-    <div class="color-semiBlack font-semibold">マイノート<span class="color-mintGreen">{{ $notes->count() }}</span></div>
+<div class="w-full flex justify-between items-center pb-2 mb-4 md:mb-10">
+    <div class="font-semibold">
+        <span class="text-gray-600">マイノート</span>
+        <span class="text-gray-400">({{ $notes->count() }})</span>
+    </div>
 
-    <div class="rounded-md bg-mintGreen pb-2">
+    <div class="rounded-md bg-mintGreen px-3 py-2 flex gap-2">
+        <x-heroicon-s-pencil class="text-mainGreen w-5 h-5 md:w-6 md:h-6" />
         <a href="#" class="color-gray">ノートを書く
         </a>
     </div>

@@ -16,7 +16,6 @@
     <div id="flash-root"></div>
 
     <main>
-        <div id="flash-root"></div>
         
         {{ $slot }}
     </main>

@@ -4,9 +4,12 @@
         <span class="text-gray-400">({{ $reviews->count() }})</span>
     </div>
 
-    <div class="rounded-md bg-mintGreen px-3 py-2">
-        <a href="#" class="text-gray-700">レビュを書く
-        </a>
+    <div class="rounded-md bg-mintGreen px-3 py-2 flex gap-2">
+        <x-heroicon-s-pencil class="text-mainGreen w-5 h-5 md:w-6 md:h-6" />
+
+        <button @click="open = true"  class="text-gray-700">レビューを書く
+        </button>
+
     </div>
 </div>
 <div class="flex flex-col gap-2 items-center">

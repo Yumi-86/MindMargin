@@ -25,7 +25,7 @@ class ReviewFactory extends Factory
             'score' => fake()->numberBetween(1, 5),
             'title' => fake()->sentence(),
             'content' => fake()->text(50),
-            'is_public' => fake()->boolean(60),
+            'is_public' => fake()->boolean(90),
             'status' => true,
         ];
     }
