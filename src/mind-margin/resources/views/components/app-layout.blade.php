@@ -27,10 +27,6 @@
     <div class="fixed bottom-0 w-full">
         <x-app.bottom-nav />
     </div>
-
-    <script>
-        window.flashMessage = @json(session('status'));
-    </script>
 </body>
 
 </html>

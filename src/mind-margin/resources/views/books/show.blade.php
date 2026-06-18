@@ -27,6 +27,11 @@
                 <x-modal>
                     @include('reviews.partials._create_modal')
                 </x-modal>
+                <div x-data="{ test: 123 }">
+                    <span x-text="test"></span>
+                    <span>hello</span>
+                </div>
+
             </div>
         @else
         @include('notes.partials._list', [

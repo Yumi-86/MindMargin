@@ -9,14 +9,10 @@
 </head>
 
 <body class="bg-gray-100">
-    <script>
-        window.flashMessage = @json(session('status'));
-    </script>
 
-    <div id="flash-root"></div>
+    @if()
 
     <main>
-        
         {{ $slot }}
     </main>
 </body>
