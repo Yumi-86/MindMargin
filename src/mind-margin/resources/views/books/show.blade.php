@@ -5,39 +5,35 @@
         ])
         <div class="flex text-center pb-2 w-full">
             <a href="{{ route('books.show', ['book' => $book, 'tab' => 'reviews']) }}" class="pb-1 w-1/2 border-b-3 border-gray-400 {{ $tab === 'reviews'
-                ? 'border-b-3 border-gray-600 color-mintGreen font-semibold'
+                ? 'border-b-3 border-gray-600 color-mainGreen font-semibold'
                 : 'color-gray'}}">
                 レビュー
             </a>
 
             <a href="{{ route('books.show', ['book' => $book, 'tab' => 'notes']) }}" class="pb-1 w-1/2  border-b-3 border-gray-400
             {{ $tab === 'notes'
-                ? 'border-b-3 border-gray-600 color-mintGreen font-semibold'
+                ? 'border-b-3 border-gray-600 color-mainGreen font-semibold'
                 : 'color-gray'}}">
                 マイノート
             </a>
         </div>
 
-        @if($tab === 'reviews')
-            <div x-data="{ open: false }">
-                @include('reviews.partials._list', [
-                'reviews' => $book->publicReviews
-                ])
+      @if($tab === 'reviews')
+        <div x-data="{ open: false }">
+        @include('reviews.partials._list', [
+            'reviews' => $book->publicReviews
+        ])
 
-                <x-modal>
-                    @include('reviews.partials._create_modal')
-                </x-modal>
-                <div x-data="{ test: 123 }">
-                    <span x-text="test"></span>
-                    <span>hello</span>
-                </div>
+        <x-modal>
+                @include('reviews.partials._create_modal')
+            </x-modal>
 
-            </div>
-        @else
-        @include('notes.partials._list', [
-        'notes' => $notes,
-        'book' => $book
-    ])
+        </div>
+    @else
+            @include('notes.partials._list', [
+                'notes' => $notes,
+                'book' => $book
+            ])
         @endif
     </div>
 </x-app-layout>
