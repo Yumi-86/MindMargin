@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 
-#[Fillable(['score', 'title', 'content', 'is_public', 'status'])]
+#[Fillable(['user_id', 'book_id', 'score', 'title', 'content', 'is_public', 'status'])]
 
 class Review extends Model
 {

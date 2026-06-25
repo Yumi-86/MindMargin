@@ -16,10 +16,10 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->foreignId('book_id')->constrained()->cascadeOnDelete();
             $table->tinyInteger('score');
-            $table->string('title')->nullable();
+            $table->string('title');
             $table->text('content')->nullable();
             $table->boolean('is_public')->default(true);
-            $table->string('status')->default('draft')->comment('ex:draft, published');
+            $table->string('status')->default('published')->comment('ex:draft, published');
             $table->timestamps();
             $table->unique(['user_id', 'book_id']);
         });

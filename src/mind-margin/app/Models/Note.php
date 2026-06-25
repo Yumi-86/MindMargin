@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 
-#[Fillable(['content'])]
+#[Fillable(['user_id', 'book_id', 'content'])]
 
 class Note extends Model
 {
@@ -20,5 +20,10 @@ class Note extends Model
     public function book()
     {
         return $this->belongsTo(Book::class);
+    }
+
+    public function scopeOwnedBy(object $query, int $userId)
+    {
+        return $query->where('user_id', $userId);
     }
 }

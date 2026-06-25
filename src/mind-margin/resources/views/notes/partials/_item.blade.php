@@ -8,7 +8,7 @@
         <div class="text-semiBlack">
             {{ $note->created_at->format('Y-m-d') }}
         </div>
-        <div class="w-50 flex gap-3">
+        <div class="flex gap-3">
             <a href="#" class="px-3 py-1.5 rounded-md border border-[#D8D4CE] text-[#5C5C5C] hover:bg-[#F7F5F2] transition">
                 編集
             </a>

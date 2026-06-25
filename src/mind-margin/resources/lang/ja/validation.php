@@ -199,6 +199,8 @@ return [
         'name' => '氏名',
         'email' => 'メールアドレス',
         'password' => 'パスワード',
+        'title' => 'タイトル',
+        'is_public' => '公開設定',
     ],
 
 ];

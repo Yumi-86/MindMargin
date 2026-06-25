@@ -18,22 +18,23 @@
             </a>
         </div>
 
-      @if($tab === 'reviews')
-        <div x-data="{ open: false }">
-        @include('reviews.partials._list', [
-            'reviews' => $book->publicReviews
-        ])
+        @if($tab === 'reviews')
+            <div x-data="{ open: {{$errors->review->any() ? 'true' : 'false'}} }" class="w-full">
+                @include('reviews.partials._list', [
+                    'reviews' => $book->publicReviews,
+                ])
 
-        <x-modal>
-                @include('reviews.partials._create_modal')
-            </x-modal>
-
-        </div>
-    @else
-            @include('notes.partials._list', [
-                'notes' => $notes,
-                'book' => $book
-            ])
+                <x-modal>
+                    @include('reviews.partials._create_modal',[
+                        'book' => $book,
+                    ])
+                </x-modal>
+            </div>
+        @else
+                @include('notes.partials._list', [
+                    'notes' => $book->notes,
+                    'book' => $book
+                ])
         @endif
     </div>
 </x-app-layout>

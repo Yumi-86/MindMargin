@@ -3,7 +3,7 @@
         <div class="text-semiBlack font-semibold">
             {{ $review->user->name }}
         </div>
-        
+
         <div class="flex items-center gap-1">
             @for($i = 1; $i <= 5; $i++)
                 @if($i <= $review->score )

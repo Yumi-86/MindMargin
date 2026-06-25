@@ -3,9 +3,9 @@
         <h2 class="text-md font-bold text-[#2F5D50] mb-6">
             今日の本との出会いの記録を残そう！
         </h2>
-        @forelse ($books as $book)
+        @forelse ($userBooks as $userBook)
             @include ('books.partials._card', [
-                'book' => $book,
+                'userBook' => $userBook,
                 'variant' => 'home'
             ])
         @empty

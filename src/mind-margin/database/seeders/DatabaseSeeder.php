@@ -35,5 +35,7 @@ class DatabaseSeeder extends Seeder
                 'book_id' => $userBook->book_id,
             ]);
         }
+
+        User::factory(10)->create();
     }
 }
